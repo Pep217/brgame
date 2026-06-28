@@ -38,5 +38,8 @@ app.use(express.static(PUBLIC_DIR));
 game.init(io);
 
 server.listen(PORT, () => {
-  console.log(`brgame läuft auf http://localhost:${PORT}`);
+  console.log(`\n  🍓 PicGuess läuft auf  http://localhost:${PORT}\n`);
+  console.log('  Lokal spielen:   Browser öffnen → ' + `http://localhost:${PORT}`);
+  console.log('  Mit Freunden übers Internet:  in einem ZWEITEN Fenster  "npm run tunnel"');
+  console.log('  (zum Beenden dieses Fensters: Strg + C)\n');
 });

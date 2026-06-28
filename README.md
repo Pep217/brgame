@@ -50,12 +50,37 @@ Optional anderer Port: `PORT=4000 npm start`
    „Privatem Raum beitreten" ein).
 5. Als Host Runden/Zeit/Modus und die Bilderauswahl einstellen → **Spiel starten**.
 
-## So spielst du mit Freunden im selben Netzwerk
+## Mit Freunden spielen
 
-`npm start` lauscht auf allen Adressen. Andere im selben WLAN erreichen dich
-über `http://<deine-lokale-IP>:3000`. Für Spiele übers Internet kannst du den
-Port z. B. per Tunnel (ngrok/cloudflared) oder auf einem kleinen Server
-freigeben.
+### Im selben WLAN
+
+`npm start` lauscht auf allen Adressen. Andere im selben Netzwerk erreichen dich
+über `http://<deine-lokale-IP>:3000` (lokale IP unter Windows mit `ipconfig`,
+Feld „IPv4-Adresse"). Ggf. muss Node einmalig durch die Windows-Firewall
+erlaubt werden (Abfrage beim ersten Start mit „Zugriff zulassen" bestätigen).
+
+### Übers Internet (Cloudflare-Tunnel, kostenlos, ohne Account)
+
+1. `npm start` laufen lassen (Server auf Port 3000).
+2. [cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
+   installieren — unter Windows am einfachsten:
+   ```cmd
+   winget install --id Cloudflare.cloudflared
+   ```
+   Danach das Terminal neu öffnen.
+3. In einem **zweiten** Fenster den Tunnel starten:
+   ```cmd
+   npm run tunnel
+   ```
+   (entspricht `cloudflared tunnel --url http://localhost:3000`)
+4. cloudflared zeigt eine öffentliche Adresse wie
+   `https://zufällige-wörter.trycloudflare.com` an — diese URL teilst du mit
+   deinen Freunden. Sie öffnen sie im Browser, geben Namen + Raum-Code ein.
+
+Die Tunnel-Adresse ist temporär und ändert sich bei jedem Neustart von
+cloudflared. **Hinweis:** Wer die URL hat, erreicht auch die Seite „Bilder
+verwalten" — teile sie also nur mit Leuten, denen du vertraust, und beende den
+Tunnel (Strg + C) nach dem Spielen.
 
 ## Projektstruktur
 
