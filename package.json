@@ -1,0 +1,19 @@
+{
+  "name": "brgame",
+  "version": "0.1.0",
+  "description": "PopSauce-style real-time multiplayer image guessing game with custom image/category management",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^2.0.0",
+    "socket.io": "^4.7.5"
+  }
+}

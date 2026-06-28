@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PicGuess — Bilder-Ratespiel</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🍓 PicGuess</div>
+    <nav>
+      <a href="/">Start</a>
+      <a href="/manage.html">Bilder verwalten</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>PicGuess</h1>
+    <p>Errate das Bild — schneller als deine Freunde. Mit deinen eigenen Bildern und Kategorien.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="grid2">
+      <div class="card">
+        <h2>Spielen</h2>
+        <label for="nick">Dein Name</label>
+        <input type="text" id="nick" maxlength="24" placeholder="z. B. Pep" />
+        <div class="spacer"></div>
+        <button class="btn green block" id="create">Neuen Raum erstellen</button>
+        <div class="spacer"></div>
+        <div class="muted center">— oder —</div>
+        <div class="spacer"></div>
+        <label for="code">Privatem Raum beitreten (Code)</label>
+        <div class="row">
+          <input type="text" id="code" maxlength="4" placeholder="ABCD" style="text-transform:uppercase; flex:1;" />
+          <button class="btn" id="join">Beitreten</button>
+        </div>
+        <p class="error" id="err"></p>
+      </div>
+
+      <div class="card">
+        <h2>So funktioniert's</h2>
+        <ol class="muted" style="line-height:1.7; padding-left:18px;">
+          <li>Lade unter <a href="/manage.html">Bilder verwalten</a> deine eigenen Bilder hoch und ordne sie Kategorien zu.</li>
+          <li>Erstelle einen Raum und teile den 4-stelligen Code mit deinen Freunden.</li>
+          <li>Als Host stellst du ein: Anzahl Runden, Zeit, Tippen oder Multiple-Choice, und welche Kategorien/Bilder vorkommen.</li>
+          <li>Bild wird angezeigt → wer am schnellsten richtig ist, bekommt die meisten Punkte.</li>
+        </ol>
+        <a class="btn ghost block" href="/manage.html">📷 Bilder &amp; Kategorien verwalten</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/lobby.js"></script>
+</body>
+</html>

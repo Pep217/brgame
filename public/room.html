@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PicGuess — Raum</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🍓 PicGuess</div>
+    <div class="code-chip" id="codeChip" title="Code kopieren">
+      <span>Raum</span> <span id="codeText">····</span>
+      <button id="copyCode">Kopieren</button>
+    </div>
+    <nav>
+      <a href="/manage.html">Bilder</a>
+      <a href="/" id="leave">Verlassen</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="game-layout">
+      <main id="main"><!-- swapped by room.js --></main>
+
+      <aside>
+        <div class="card">
+          <h2>Spieler <span id="playerCount" class="pill"></span></h2>
+          <div class="players" id="players"></div>
+        </div>
+        <div class="card">
+          <h2>Chat</h2>
+          <div class="chat-log" id="chatlog"></div>
+          <div class="row">
+            <input type="text" id="chatinput" placeholder="Nachricht…" maxlength="300" style="flex:1;" />
+            <button class="btn small" id="chatsend">Senden</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/room.js"></script>
+</body>
+</html>

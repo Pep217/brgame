@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PicGuess — Bilder verwalten</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🍓 PicGuess</div>
+    <nav>
+      <a href="/">Start</a>
+      <a href="/manage.html">Bilder verwalten</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="grid2">
+      <!-- Upload -->
+      <div class="card">
+        <h2>Bilder hochladen</h2>
+        <div class="dropzone" id="dropzone">
+          <div>📤 Bilder hierher ziehen oder <b>klicken</b> zum Auswählen</div>
+          <div class="muted" style="font-size:13px;">jpg, png, gif, webp · mehrere gleichzeitig möglich</div>
+          <input type="file" id="fileInput" accept="image/*" multiple class="hidden" />
+        </div>
+        <div class="preview-row" id="previewRow"></div>
+
+        <div class="spacer"></div>
+        <label>Antwort(en) — was ist auf dem Bild?</label>
+        <textarea id="answers" placeholder="z. B. Eiffelturm&#10;Tour Eiffel&#10;(eine Antwort pro Zeile; alle gelten als richtig)"></textarea>
+        <p class="muted" style="font-size:13px;margin:4px 0 0;">Die erste Zeile ist die Hauptantwort (wird bei Multiple-Choice angezeigt).</p>
+
+        <div class="spacer"></div>
+        <label>Kategorien</label>
+        <div class="checkbox-grid" id="uploadCats"></div>
+
+        <div class="spacer"></div>
+        <button class="btn green block" id="uploadBtn" disabled>Hochladen</button>
+        <p class="muted" id="uploadHint" style="font-size:13px;"></p>
+      </div>
+
+      <!-- Categories -->
+      <div class="card">
+        <h2>Kategorien</h2>
+        <div class="row">
+          <input type="text" id="newCat" placeholder="Neue Kategorie…" style="flex:1;" />
+          <button class="btn" id="addCat">+ Anlegen</button>
+        </div>
+        <div class="spacer"></div>
+        <div class="cat-list" id="catList"></div>
+        <p class="muted" id="catEmpty" style="font-size:13px;"></p>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="card">
+      <div class="row" style="justify-content:space-between;">
+        <h2 style="margin:0;">Deine Bilder <span class="pill" id="imgCount"></span></h2>
+        <select id="galleryFilter" style="max-width:240px;"><option value="">Alle Kategorien</option></select>
+      </div>
+      <div class="spacer"></div>
+      <div class="thumb-grid" id="gallery"></div>
+      <p class="muted center" id="galleryEmpty"></p>
+    </div>
+  </div>
+
+  <div id="modalHost"></div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/manage.js"></script>
+</body>
+</html>
