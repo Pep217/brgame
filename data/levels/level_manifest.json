@@ -1,0 +1,14 @@
+{
+  "levels": [
+    "res://data/levels/level_01.json",
+    "res://data/levels/level_02.json",
+    "res://data/levels/level_03.json",
+    "res://data/levels/level_04.json",
+    "res://data/levels/level_05.json",
+    "res://data/levels/level_06.json",
+    "res://data/levels/level_07.json",
+    "res://data/levels/level_08.json",
+    "res://data/levels/level_09.json",
+    "res://data/levels/level_10.json"
+  ]
+}
