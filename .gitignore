@@ -1,0 +1,17 @@
+# Godot 4 editor artifacts
+.godot/
+.import/
+export.cfg
+export_credentials.cfg
+
+# Exported builds
+builds/
+*.pck
+*.exe
+*.x86_64
+*.dmg
+*.app/
+
+# OS
+.DS_Store
+Thumbs.db
